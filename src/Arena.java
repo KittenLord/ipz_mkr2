@@ -19,15 +19,15 @@ public class Arena {
             if(c == origin) continue;
             int dx2 = (c.coordinates.x - origin.coordinates.x) * (c.coordinates.x - origin.coordinates.x);
             int dy2 = (c.coordinates.y - origin.coordinates.y) * (c.coordinates.y - origin.coordinates.y);
-            float d = Math.sqrt(dx2 + dy2);
+            double d = Math.sqrt(dx2 + dy2);
             if(d <= radius) return c;
         }
         return null;
     }
 
     public void move(Character character, int dx, int dy) {
-        character.coordinates += dx;
-        character.coordinates += dy;
+        character.coordinates.x += dx;
+        character.coordinates.y += dy;
     }
 
     public boolean attack(Character character, int range, int multiplier) {
@@ -38,8 +38,11 @@ public class Arena {
     }
 
     public void addPlayer(Client client, Character character) {
+        for(Client c: clients) {
+            c.notify("A new player joined");
+        }
         clients.add(client);
-        characters.add(characters);
+        characters.add(character);
     }
 
 }

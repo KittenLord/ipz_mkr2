@@ -24,7 +24,7 @@ public class CharacterFactory {
         if(type == "Warrior") return new Warrior(arena, warriorHealth, warriorDamage);
         else if(type == "Mage") return new Mage(arena, mageHealth, mageDamage);
         else if(type == "Archer") return new Archer(arena, archerHealth, archerDamage);
-        else throw new Exception("Invalid character type");
+        else return null;
     }
 
 }

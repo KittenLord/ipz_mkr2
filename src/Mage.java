@@ -7,7 +7,7 @@ public class Mage extends Character {
     }
 
     public boolean attack() {
-        arena.attack(this, 2, 20);
+        return arena.attack(this, 2, 20);
     }
 
     public Mage(Arena arena, int health, int damage) {

@@ -7,7 +7,7 @@ public class Warrior extends Character {
     }
 
     public boolean attack() {
-        arena.attack(this, 1, 10);
+        return arena.attack(this, 1, 10);
     }
 
     public Warrior(Arena arena, int health, int damage) {
